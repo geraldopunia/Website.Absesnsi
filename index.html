@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Hadir Tamu</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>📋 Daftar Hadir Tamu</h1>
+            <p>Isi form di bawah untuk mencatat kehadiran tamu.</p>
+        </header>
+
+        <!-- Form Isi Hadir -->
+        <section class="card">
+            <h2>✏️ Isi Daftar Hadir</h2>
+
+            <form id="formHadir">
+                <div class="form-group">
+                    <label for="inputNama">Nama Lengkap</label>
+                    <input type="text" id="inputNama" placeholder="Contoh: Budi Santoso" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputInstansi">Instansi / Organisasi</label>
+                    <input type="text" id="inputInstansi" placeholder="Contoh: PT ABC" required>
+                </div>
+                <button type="submit" class="btn-green">✅ Simpan Kehadiran</button>
+            </form>
+
+            <p id="msgSuccess" class="msg-success" style="display:none;">Data kehadiran berhasil disimpan!</p>
+        </section>
+
+        <!-- Daftar Hadir -->
+        <section class="card">
+            <div class="card-header-row">
+                <h2>📝 Daftar Kehadiran</h2>
+                <div class="btn-group">
+                    <button id="exportCSV" class="btn-small">📥 Export CSV</button>
+                    <button id="resetData" class="btn-small btn-red">🗑 Reset</button>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Instansi</th>
+                        <th>Jam Hadir</th>
+                    </tr>
+                </thead>
+
+                <tbody id="attendanceList"></tbody>
+            </table>
+
+            <p id="emptyMsg" class="empty-msg">Belum ada data kehadiran.</p>
+        </section>
+
+    </div>
+
+</body>
+</html>
